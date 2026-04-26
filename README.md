@@ -42,16 +42,10 @@ CSV / Generator → Bronze → Silver → Gold → SQLite → Dashboard
 
 ## 📸 Dashboard Preview
 
-> Add your screenshots here (very important for recruiters)
-
-```
-/Screenshots/Dashboard.jpeg
-/Screenshots/Metrics.jpeg
-```
-
-Example:
 
 ![Dashboard](Screenshots/Dashboard.jpeg)
+
+![Mterices](/Screenshots/Metrics.jpeg)
 
 ---
 
