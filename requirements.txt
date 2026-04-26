@@ -1,0 +1,7 @@
+# Python dependencies for the healthcare data engineering project
+pandas==2.2.3
+pytest==7.4.0
+streamlit>=1.28.0
+matplotlib>=3.7.0
+# Note: sqlite3 is built-in with Python 3.x
+# For logging, use standard library

@@ -1,0 +1,7 @@
+patient_id,timestamp,heart_rate,temperature,blood_pressure_systolic,blood_pressure_diastolic
+1,2023-01-01T10:00:00Z,70,36.5,120,80
+2,2023-01-01T10:05:00Z,85,37.0,130,85
+3,2023-01-01T10:10:00Z,200,42.5,140,90  # Abnormal heart rate and temp
+4,2023-01-01T10:15:00Z,65,35.0,110,70
+5,2023-01-01T10:20:00Z,75,36.8,125,82
+6,2023-01-01T10:25:00Z,30,34.0,100,60   # Abnormal heart rate and temp

@@ -1,0 +1,20 @@
+# Python cache
+__pycache__/
+*.py[cod]
+*~
+
+# Virtual environment
+venv/
+.env
+
+# Data and logs
+logs/
+*.db
+*.sqlite
+
+# Spark temporary files
+*.crc
+
+# OS files
+.DS_Store
+Thumbs.db

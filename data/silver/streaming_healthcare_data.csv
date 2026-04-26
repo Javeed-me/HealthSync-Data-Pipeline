@@ -1,0 +1,11 @@
+patient_id,timestamp,heart_rate,temperature,blood_pressure_systolic,blood_pressure_diastolic,heart_rate_abnormal,temperature_abnormal,any_abnormal
+3,2026-04-25T23:27:22.571093Z,178,39.4,103,67,False,False,False
+8,2026-04-25T23:28:58.571093Z,133,41.3,135,87,False,False,False
+9,2026-04-25T23:30:25.571093Z,105,37.1,98,63,False,False,False
+2,2026-04-25T23:30:01.571093Z,79,41.1,136,97,False,False,False
+10,2026-04-25T23:31:40.571093Z,75,40.3,100,94,False,False,False
+6,2026-04-25T23:29:24.571093Z,114,42.2,135,73,False,True,True
+9,2026-04-25T23:31:20.571093Z,56,42.7,116,77,False,True,True
+3,2026-04-25T23:31:09.571093Z,30,41.7,102,95,True,False,True
+9,2026-04-25T23:31:40.571093Z,192,34.1,117,96,True,True,True
+8,2026-04-25T23:28:42.571093Z,30,37.3,151,78,True,False,True
