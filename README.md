@@ -45,7 +45,7 @@ CSV / Generator → Bronze → Silver → Gold → SQLite → Dashboard
 
 ![Dashboard](Screenshots/Dashboard.jpeg)
 
-![Mterices](/Screenshots/Metrics.jpeg)
+![Metrices](/Screenshots/Metrics.jpeg)
 
 ---
 
