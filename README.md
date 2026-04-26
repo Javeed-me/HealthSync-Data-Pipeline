@@ -40,12 +40,12 @@ CSV / Generator → Bronze → Silver → Gold → SQLite → Dashboard
 
 ---
 
-## 📸 Dashboard Preview
+## 📸 Preview
 
 
 ![Dashboard](Screenshots/Dashboard.jpeg)
 
-![Metrices](/Screenshots/Metrics.jpeg)
+![Metrics](Screenshots/Metrics.jpeg)
 
 ---
 
