@@ -1,22 +1,14 @@
+# 🏥 HealthSync Data Pipeline
+
+A production-style healthcare data engineering platform designed to support a patient diagnosis system by ensuring clean, reliable, and analytics-ready data.
+
 ---
-# 🏥 Healthcare Data Engineering Platform
+
+## 🎯 Overview
 
 This project was developed as an extension of a patient diagnosis system to improve data quality, organization, and reliability for better clinical analysis and decision support.
 
-It processes healthcare data from multiple sources, ensures data validation, detects abnormal patient conditions, and makes the data analytics-ready through a structured pipeline.
----
-## 🎯 Problem Statement
-
-In healthcare systems, patient data often comes from multiple sources such as medical records and monitoring devices. This data is frequently inconsistent, unstructured, and difficult to analyze.
-
-To support effective patient diagnosis and decision-making, there is a need for a system that:
-
-* Cleans and validates healthcare data
-* Ensures consistency and reliability
-* Detects abnormal patient conditions
-* Provides structured, analytics-ready data
-
-This project addresses these challenges by building a scalable data pipeline with validation, alerting, and visualization capabilities.
+It processes healthcare data from multiple sources, applies validation rules, detects abnormal patient conditions, and transforms raw data into structured insights through a scalable pipeline.
 
 ---
 
@@ -24,68 +16,78 @@ This project addresses these challenges by building a scalable data pipeline wit
 
 * 🧱 Medallion Architecture (Bronze → Silver → Gold)
 * 🔄 Batch & Simulated Streaming Pipelines
-* 🧪 Data Quality Validation (nulls, duplicates, schema)
-* 🚨 Healthcare Alerts (abnormal vitals detection)
+* 🧪 Data Quality Checks (nulls, duplicates, schema)
+* 🚨 Abnormal Patient Detection (vital thresholds)
 * 📊 Interactive Dashboard (Streamlit)
-* 📈 Synthetic Data Generation (scalable datasets)
-* ⚙️ CLI-based pipeline execution
-* 🧪 Unit Testing with pytest
-* ☁️ Cloud-ready architecture (Azure mapping)
+* 📈 Synthetic Data Generation (1000–10000+ records)
+* ⚙️ CLI-based execution (production-style)
+* 🧪 Unit Testing (pytest)
+* ☁️ Cloud-ready design (Azure mapping)
 
 ---
 
 ## 🧭 Architecture
 
-### Medallion Architecture
-
-| Layer            | Description                      |
-| ---------------- | -------------------------------- |
-| **Bronze** | Raw healthcare data              |
-| **Silver** | Cleaned & validated data         |
-| **Gold**   | Aggregated, analytics-ready data |
-
-### Data Flow
-
 ```
 CSV / Generator → Bronze → Silver → Gold → SQLite → Dashboard
 ```
+
+| Layer  | Description                      |
+| ------ | -------------------------------- |
+| Bronze | Raw healthcare data              |
+| Silver | Cleaned and validated data       |
+| Gold   | Aggregated, analytics-ready data |
+
+---
+
+## 📸 Dashboard Preview
+
+> Add your screenshots here (very important for recruiters)
+
+```
+/Screenshots/Dashboard.jpeg
+/Screenshots/Metrics.jpeg
+```
+
+Example:
+
+![Dashboard](Screenshots/Dashboard.jpeg)
 
 ---
 
 ## 🗂️ Project Structure
 
 ```
-├── src/
-│   ├── ingestion/          # Batch & streaming ingestion
-│   ├── processing/         # Transformations & validations
-│   ├── storage/            # Database loading
-│   └── utils/              # Config & logging
-├── tests/                  # Unit tests
-├── data/                   # Bronze, Silver, Gold layers
-├── dashboard/              # Streamlit app
-├── run.py                  # CLI entry point
-└── README.md
+src/
+ ├── ingestion/        # Batch & streaming ingestion
+ ├── processing/       # Transformations & validations
+ ├── storage/          # Database loading
+ └── utils/            # Config & logging
+tests/                 # Unit tests
+data/                  # Data layers (Bronze, Silver, Gold)
+dashboard/             # Streamlit app
+run.py                 # CLI entry point
 ```
 
 ---
 
 ## ⚙️ Tech Stack
 
-| Category        | Technology     | Purpose             |
-| --------------- | -------------- | ------------------- |
-| Language        | Python         | Core development    |
-| Data Processing | Pandas         | Data transformation |
-| Database        | SQLite         | Store final data    |
-| Visualization   | Streamlit      | Dashboard UI        |
-| Charts          | Matplotlib     | Graphs & insights   |
-| Testing         | pytest         | Unit testing        |
-| DevOps          | GitHub Actions | CI/CD               |
+| Category        | Technology     |
+| --------------- | -------------- |
+| Language        | Python         |
+| Data Processing | Pandas         |
+| Database        | SQLite         |
+| Visualization   | Streamlit      |
+| Charts          | Matplotlib     |
+| Testing         | pytest         |
+| CI/CD           | GitHub Actions |
 
 ---
 
 ## ▶️ Quick Start
 
-### 1. Install Dependencies
+### Install dependencies
 
 ```bash
 pip install -r requirements.txt
@@ -93,10 +95,10 @@ pip install -r requirements.txt
 
 ---
 
-## 📊 Generate Data (Optional but Recommended)
+## 📊 Generate Data (Optional)
 
 ```bash
-python run.py generate-data --records 1000
+python run.py generate-data --records 5000
 ```
 
 ---
@@ -104,13 +106,8 @@ python run.py generate-data --records 1000
 ## 🔄 Run Batch Pipeline
 
 ```bash
-# Ingest data
 python run.py batch-ingest
-
-# Process data
 python run.py batch-process
-
-# Load into database
 python run.py load-db --type batch
 ```
 
@@ -132,8 +129,8 @@ python run.py load-db --type streaming
 streamlit run dashboard/app.py
 ```
 
-Then open:
-👉 [http://localhost:8501](http://localhost:8501/)
+Open in browser:
+👉 http://localhost:8501
 
 ---
 
@@ -141,16 +138,14 @@ Then open:
 
 | Metric      | Normal Range |
 | ----------- | ------------ |
-| Heart Rate  | 40–180 bpm  |
-| Temperature | 35–42 °C   |
-
-👉 Abnormal values are flagged and shown in dashboard alerts.
+| Heart Rate  | 40–180 bpm   |
+| Temperature | 35–42 °C     |
 
 ---
 
 ## 🗄️ Database
 
-SQLite database:
+Database file:
 
 ```
 data/healthcare_gold.db
@@ -163,31 +158,12 @@ Tables:
 
 ---
 
-## 📊 Dashboard Features
+## 📊 Results
 
-* Key metrics (patients, alerts, vitals)
-* Abnormal patient detection
-* Interactive charts:
-  * Heart rate trends
-  * Temperature analysis
-  * Alert distribution
-* Full dataset viewer
-
----
-
-## 📈 Scaling with Synthetic Data
-
-To simulate real-world scenarios:
-
-```bash
-python run.py generate-data --records 10000
-```
-
-This allows:
-
-* Testing pipeline performance
-* Demonstrating scalability
-* Generating realistic datasets
+* Processed 1000+ patient records
+* Detected abnormal patient conditions
+* Generated structured datasets for analytics
+* Built interactive visualization dashboard
 
 ---
 
@@ -196,43 +172,22 @@ This allows:
 | Current          | Azure Equivalent           |
 | ---------------- | -------------------------- |
 | Pandas           | Azure Databricks (PySpark) |
-| CSV Files        | Azure Data Lake            |
+| CSV              | Azure Data Lake            |
 | SQLite           | Azure SQL Database         |
 | Python Streaming | Azure Event Hub            |
 | CLI Scripts      | Azure Data Factory         |
 
 ---
 
-## 🧪 Testing
+## 🏆 Key Takeaways
 
-Run tests:
-
-```bash
-pytest tests/
-```
-
-✔ Ensures:
-
-* Data quality checks
-* Transformations
-* Pipeline reliability
+* Built a real-world data pipeline
+* Applied healthcare domain validation
+* Designed scalable architecture
+* Integrated backend + visualization
 
 ---
 
-## 🏆 Key Highlights
+## 👨‍💻 Author
 
-* End-to-end data pipeline
-* Real-world healthcare use case
-* Scalable architecture design
-* Production-like structure
-* Visualization + analytics
-
----
-
-## 💡 Future Improvements
-
-* Cloud deployment on Azure
-* Real-time streaming with Kafka/Event Hub
-* Distributed processing with Spark
-* Advanced anomaly detection
-* API-based data ingestion
+Developed as a data engineering project to demonstrate real-world pipeline design, data processing, and system scalability.
